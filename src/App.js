@@ -3,11 +3,7 @@ import LoanCalculator from './containers/LoanCalculator';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <LoanCalculator />
-    </div>
-  );
+  return <LoanCalculator />;
 }
 
 export default App;

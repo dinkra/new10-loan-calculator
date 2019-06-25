@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Slider = ({ min = 0, max, onChange }) => (
+const Slider = ({ min = 0, max = 100, onChange = () => {} }) => (
   <div>
     <input type="range" min={min} max={max} value="0" onChange={onChange} />
   </div>
