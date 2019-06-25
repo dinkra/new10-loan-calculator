@@ -1,14 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button`
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border-radius: 3px;
-  background-color: white;
-  color: ${(props) => props.theme.primary};
-  border: 2px solid ${(props) => props.theme.primary};
+const cssPrimary = css`
+  color: ${(p) => p.theme.white};
+  background-color: ${(p) => p.theme.primary};
+  border-color: ${(p) => p.theme.primary};
+
+  &:hover,
+  [data-whatintent='keyboard'] &:focus {
+    background-color: ${(p) => p.theme.primaryActive};
+    border-color: ${(p) => p.theme.primaryActive};
+  }
+`;
+
+const cssSecondary = css`
+  color: ${(p) => p.theme.primary};
+  background-color: ${(p) => p.theme.white};
+  border-color: ${(p) => p.theme.primary};
 
   &:hover,
   [data-whatintent='keyboard'] &:focus {
@@ -17,6 +25,19 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ children, onClick }) => <StyledButton onClick={onClick}>{children}</StyledButton>;
+const StyledButton = styled.button`
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+
+  ${(p) => p.appearance === 'primary' && cssPrimary};
+  ${(p) => p.appearance === 'secondary' && cssSecondary};
+`;
+
+const Button = ({ active, onClick, children }) => (
+  <StyledButton appearance={active ? 'primary' : 'secondary'} onClick={onClick}>
+    {children}
+  </StyledButton>
+);
 
 export default Button;
