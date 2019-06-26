@@ -26,7 +26,7 @@ export const getPercentageRange = (amount) => {
   if (amount < 500000) {
     return { min: 4, max: 6 };
   }
-  return {};
+  return { min: 0, max: 0 };
 };
 
 export const calcInterestRate = (product, legalForm, amount, term) => {

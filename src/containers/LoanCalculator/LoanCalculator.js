@@ -128,7 +128,7 @@ class LoanCalculator extends PureComponent {
           </Card>
           <Card dark>
             <h3>
-              Interest Amount <strong>{rate}</strong>
+              Interest Amount <strong>{rate}%</strong>
             </h3>
           </Card>
         </Wrapper>
