@@ -27,7 +27,7 @@ const cssSecondary = css`
 
 const StyledButton = styled.button`
   font-size: 1em;
-  margin: 1em;
+  margin: 0.25em;
   padding: 0.25em 1em;
 
   ${(p) => p.appearance === 'primary' && cssPrimary};
