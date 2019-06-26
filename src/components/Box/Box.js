@@ -8,7 +8,7 @@ const StyledBox = styled.div`
   justify-content: ${(p) => p.alignment};
   > * + * {
     padding: 0em;
-    margin: 0.5em;
+    margin: 0 0.25em;
   }
 `;
 
