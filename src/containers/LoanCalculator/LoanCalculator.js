@@ -26,6 +26,10 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `;
 
+const Header = styled.h3`
+  text-align: center;
+`;
+
 class LoanCalculator extends PureComponent {
   state = {
     amount: 0,
@@ -64,7 +68,7 @@ class LoanCalculator extends PureComponent {
     return (
       <Container>
         <Wrapper>
-          <h3>Loan Calculator</h3>
+          <Header>Loan Calculator</Header>
           <Card>
             <p>Loan Type</p>
             <Box direction="horisontal">
@@ -122,11 +126,11 @@ class LoanCalculator extends PureComponent {
               </p>
             </Loading>
           </Card>
-          {rate && (
+          <Card dark>
             <h3>
               Interest Amount <strong>{rate}</strong>
             </h3>
-          )}
+          </Card>
         </Wrapper>
       </Container>
     );
